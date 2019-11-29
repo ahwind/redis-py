@@ -1391,9 +1391,9 @@ class Redis(object):
         """
         return self.execute_command('INCRBYFLOAT', name, amount)
 
-    def keys(self, pattern='*'):
+    def keys(self, pattern='*', keys='KEYS'):
         "Returns a list of keys matching ``pattern``"
-        return self.execute_command('KEYS', pattern)
+        return self.execute_command(keys, pattern)
 
     def mget(self, keys, *args):
         """
